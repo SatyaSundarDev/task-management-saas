@@ -1,6 +1,6 @@
 import Project from "../models/Project.js";
 
-export const CreateProject = async (req, res) => {
+export const createProject = async (req, res) => {
     try {
         const project = await Project.create({
             name: req.body.name,

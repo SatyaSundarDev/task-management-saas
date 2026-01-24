@@ -1,7 +1,7 @@
 import express from "express"
 import { protect } from "../middleware/authMiddleware.js";
 import { requireWorkspaceMember } from './../middleware/workspaceMiddleware.js';
-import { addProjectMember, CreateProject, getProjects } from "../controllers/projectController.js";
+import { addProjectMember, createProject, getProjects } from "../controllers/projectController.js";
 import { requireProjectMember } from "../middleware/projectMiddleware.js";
 
 
@@ -11,7 +11,7 @@ router.post(
     "/:workspaceId/projects",
     protect,
     requireWorkspaceMember,
-    CreateProject
+    createProject
 )
 
 router.post(
@@ -22,7 +22,7 @@ router.post(
 )
 
 router.get(
-    "./workspaceId/projects",
+    "/:workspaceId/projects",
     protect,
     requireWorkspaceMember,
     getProjects

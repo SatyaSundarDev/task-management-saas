@@ -1,6 +1,6 @@
 import Workspace from "../models/Workspace.js"
 
-export const requireWorkspaceMember = async (req, resizeBy, next) => {
+export const requireWorkspaceMember = async (req, res, next) => {
     try{
     const {workspaceId} = req.params;
     const userId = req.user._id;

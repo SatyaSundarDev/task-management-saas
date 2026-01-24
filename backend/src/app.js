@@ -4,6 +4,7 @@ import authRoutes from "./routes/authRoutes.js"
 import { protect } from "./middleware/authMiddleware.js"
 import workspaceRoutes from "./routes/workspaceRoutes.js"
 import projectRoutes from "./routes/projectRoutes.js"
+import taskRoutes from "./routes/taskRoutes.js"
 
 const app = express()
 
@@ -12,6 +13,8 @@ app.use(express.json())
 
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/workspaces", workspaceRoutes)
+
+app.use("/api/v1", taskRoutes)
 
 app.get("/health", (req, res) => {
     res.json({status: "OK"})
